@@ -1,13 +1,13 @@
 var config = {
     /* Demo profile data for the template. Replace as needed. */
-    name: "Shirong Lu",
-    sex: "Backend / Systems",
-    age: "Shanghai, China",
-    phone: '<a href="https://github.com/happysnaker" target="_blank">github.com/happysnaker</a>',
-    email: "happysnaker@foxmail.com",
-    address: '<a href="https://happysnaker.github.io/" target="_blank">happysnaker.github.io</a>',
-    qq: '<strong>Template saved you time?</strong> <a href="https://happysnaker.github.io/support/#from-resume" target="_blank">Tip ¥9.9 / ¥19.9 via WeChat / Alipay</a><br><strong>Portfolio still feels generic / student-ish?</strong> <a href="https://happysnaker.github.io/review/" target="_blank">Book a ¥29.9 quick read / ¥99 async review</a>',
-    log: "happysnaker",
+    name: "Example Name",
+    sex: "?",
+    age: "...",
+    phone: '<a href="https://example.com" target="_blank">example</a>',
+    email: "example@example.com",
+    address: '<a href="https://wujinjun-mc.github.io/" target="_blank">wujinjun-mc.github.io</a>',
+    qq: '<strong>Template saved you time?</strong> <a href="https://example.github.io/support/#from-resume" target="_blank">Tip ¥9.9 / ¥19.9 via WeChat / Alipay</a><br><strong>Portfolio still feels generic / student-ish?</strong> <a href="https://example_name.github.io/review/" target="_blank">Book a ¥29.9 quick read / ¥99 async review</a>',
+    log: "example_name",
     excpect_work: "Backend / Infrastructure / Systems Engineering",
 
     motto: [
@@ -20,7 +20,7 @@ var config = {
 
     welcome: "Backend / Systems Engineer<br>Go · Java · Distributed Systems<br>Go / Java backend builder<br>Glad to have you here.",
 
-    about: "<p>你好，我是 Shirong Lu（happysnaker），专注 Go / Java 后端、分布式系统、RPC、可观测性与工程效率。</p>" +
+    about: "<p>你好，我是 ?（example_name），专注 Go / Java 后端、分布式系统、RPC、可观测性与工程效率。</p>" +
         "<p>我持续公开构建可复用的工程资产，例如 Go 服务脚手架、后端工程师成长清单、系统学习笔记与技术博客。</p>" +
         "<p>近期我也在为 urfave/cli、go-chi/chi、GitHub Docs、Docker Docs、OpenTelemetry 等项目持续提交代码修复与工程相关贡献，把可复用经验沉淀成公开资产。</p>",
 
@@ -42,10 +42,10 @@ var config = {
         "</ul>",
 
     portfolio: [
-        ["./images/card-oss-contrib.png", "https://github.com/happysnaker/qq-ai-bot", "qq-ai-bot", "Self-hosted QQ ↔ AI bot scaffold with OneBot 11 / NapCat / LLOneBot, ACP-compatible agents, persistent sessions, progress streaming, and a Docker demo."],
-        ["./images/card-go-service-starter.png", "https://github.com/happysnaker/go-service-starter", "go-service-starter", "Production-minded Go HTTP service starter with health endpoints, structured logging, graceful shutdown, and Docker."],
-        ["./images/card-backend-checklist.png", "https://github.com/happysnaker/backend-engineer-checklist", "backend-engineer-checklist", "Practical roadmap for Go, Java, distributed systems, databases, networking, and observability."],
-        ["./images/card-oss-contrib.png", "https://github.com/github/docs/pulls?q=is%3Apr+author%3Ahappysnaker", "Open-source contributions", "Recent docs and engineering contributions across GitHub Docs, Docker Docs, OpenTelemetry, Prometheus, chi, and Vue docs."]
+        ["./images/card-oss-contrib.png", "https://github.com/example_name/qq-ai-bot", "example project 1", "Self-hosted QQ ↔ AI bot scaffold with OneBot 11 / NapCat / LLOneBot, ACP-compatible agents, persistent sessions, progress streaming, and a Docker demo."],
+        ["./images/card-go-service-starter.png", "https://github.com/example_name/go-service-starter", "example project 2", "Production-minded Go HTTP service starter with health endpoints, structured logging, graceful shutdown, and Docker."],
+        ["./images/card-backend-checklist.png", "https://github.com/example_name/backend-engineer-checklist", "example project 3", "Practical roadmap for Go, Java, distributed systems, databases, networking, and observability."],
+        ["./images/card-oss-contrib.png", "https://github.com/github/docs/pulls?q=is%3Apr+author%3Aexample_name", "example project 4", "Recent docs and engineering contributions across GitHub Docs, Docker Docs, OpenTelemetry, Prometheus, chi, and Vue docs."]
     ],
 
     work: [
@@ -69,9 +69,9 @@ var config = {
     ],
 
     icon: [
-        ["./svg/github.svg", "https://github.com/happysnaker", "GitHub profile"],
-        ["./svg/博客.svg", "https://happysnaker.github.io/", "Technical blog"],
-        ["./svg/github.svg", "https://happysnaker.github.io/support/#from-resume", "Support via WeChat / Alipay"]
+        ["./svg/github.svg", "https://github.com/example_name", "GitHub profile"],
+        ["./svg/博客.svg", "https://example_name.github.io/", "Technical blog"],
+        ["./svg/github.svg", "https://example_name.github.io/support/#from-resume", "Support via WeChat / Alipay"]
     ],
 
     url: [

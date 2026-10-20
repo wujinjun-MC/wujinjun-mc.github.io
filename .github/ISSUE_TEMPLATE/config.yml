@@ -1,0 +1,29 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Proof before payment
+    url: https://happysnaker.github.io/support/#proof-before-payment
+    about: Check current proof, support routes, and concrete payment notes before tipping or buying feedback.
+  - name: 10-second support router
+    url: https://happysnaker.github.io/support/#sponsor-router
+    about: Choose Tip / Proof / Review / Fund before paying, sponsoring, or buying a review.
+  - name: Sponsor / paid-support intake replies
+    url: https://github.com/happysnaker/happysnaker/blob/master/docs/share-kit.md#sponsor--paid-support-intake-replies
+    about: Use proof-safe intake replies and privacy guardrails before asking people to pay or share context.
+  - name: Sponsor prospect pipeline
+    url: https://github.com/happysnaker/happysnaker/blob/master/docs/sponsor-prospect-pipeline.md
+    about: Route profile, README, resume-site, and landing-page review requests to the right proof, CTA, support note, and guardrail.
+  - name: Sponsor conversion scorecard
+    url: https://github.com/happysnaker/happysnaker/blob/master/docs/sponsor-conversion-scorecard.md
+    about: Classify profile/support asks as Hot / Warm / Nurture / No-send before asking for payment or review.
+  - name: Support / direct feedback
+    url: https://happysnaker.github.io/support/#from-resume
+    about: Tip if Resume saved you time, or use the shortest support path tied to this repo.
+  - name: ¥29.9 quick read / ¥99 async review
+    url: https://happysnaker.github.io/review/
+    about: Best fit if your own portfolio site works but still feels generic, student-ish, or disconnected from your GitHub.
+  - name: What to see next from Resume
+    url: https://github.com/happysnaker/Resume/discussions/5
+    about: Maintainer note pointing to flagship repos, profile proof, and the shortest next clicks.
+  - name: Resume support discussion
+    url: https://github.com/happysnaker/Resume/discussions/4
+    about: See the latest shortest support path and maintainer note for this repo.

@@ -6,7 +6,7 @@ var config = {
     phone: '<a href="https://example.com" target="_blank">example</a>',
     email: "example@example.com",
     address: '<a href="https://wujinjun-mc.github.io/" target="_blank">wujinjun-mc.github.io</a>',
-    qq: '<strong>Template saved you time?</strong> <a href="https://example.github.io/support/#from-resume" target="_blank">Tip ¥9.9 / ¥19.9 via WeChat / Alipay</a><br><strong>Portfolio still feels generic / student-ish?</strong> <a href="https://example_name.github.io/review/" target="_blank">Book a ¥29.9 quick read / ¥99 async review</a>',
+    qq: '<strong>(Removed sponsorship from upstream)</a>',
     log: "example_name",
     excpect_work: "Backend / Infrastructure / Systems Engineering",
 
@@ -20,9 +20,9 @@ var config = {
 
     welcome: "Backend / Systems Engineer<br>Go · Java · Distributed Systems<br>Go / Java backend builder<br>Glad to have you here.",
 
-    about: "<p>你好，我是 ?（example_name），专注 Go / Java 后端、分布式系统、RPC、可观测性与工程效率。</p>" +
-        "<p>我持续公开构建可复用的工程资产，例如 Go 服务脚手架、后端工程师成长清单、系统学习笔记与技术博客。</p>" +
-        "<p>近期我也在为 urfave/cli、go-chi/chi、GitHub Docs、Docker Docs、OpenTelemetry 等项目持续提交代码修复与工程相关贡献，把可复用经验沉淀成公开资产。</p>",
+    about: "<p>你好，我是 ?（example_name），专注 ...</p>" +
+        "<p>Subscribe to my newsletter for updates on backend engineering and distributed systems.</p>" +
+        "<p>Star & Fork</p>",
 
     skills: [
         ["Go", 90, "#00ADD8"],
@@ -34,11 +34,11 @@ var config = {
     ],
 
     skills_description: "<ul>" +
-        "<li>Go / Java 后端服务设计与基础工程搭建。</li>" +
-        "<li>关注 RPC、超时/重试、幂等、缓存、队列与服务治理。</li>" +
-        "<li>重视日志、指标、追踪与线上可观测性。</li>" +
-        "<li>具备数据库索引、事务、SQL 调优与存储基础。</li>" +
-        "<li>喜欢把工程经验整理成模板、清单与可复用资产。</li>" +
+        "<li>Data Science + AI</li>" +
+        "<li>Build Everyday</li>" +
+        "<li>Idea Generation</li>" +
+        "<li>Problem Solving</li>" +
+        "<li>Communication</li>" +
         "</ul>",
 
     portfolio: [
@@ -62,10 +62,10 @@ var config = {
     ],
 
     others: [
-        ["2026-06", "Packaged go-service-starter", "Published a production-minded Go HTTP service starter with docs, Docker support, health endpoints, and graceful shutdown."],
-        ["2026-06", "Published backend-engineer-checklist", "Built a shareable backend growth checklist covering languages, databases, distributed systems, networking, and observability."],
-        ["2026-06", "Ongoing OSS contributions", "Opened pull requests for GitHub Docs, Docker Docs, OpenTelemetry Go, Prometheus, chi, and Vue docs."],
-        ["2026-06", "Technical writing", "Maintain a personal technical site with notes on backend engineering, Java/Go, and systems topics."]
+        ["2026-06", "Example task 1", "Description of a task or achievement, such as contributing to open-source projects or building reusable engineering assets."],
+        ["2026-06", "Example task 2", "Description of another task or achievement, such as maintaining a personal technical site or publishing notes on backend engineering."],
+        ["2026-06", "Example task 3", "Description of a third task or achievement, such as participating in community discussions or writing technical articles."],
+        ["2026-06", "Example task 4", "Description of a fourth task or achievement, such as mentoring junior engineers or organizing technical workshops."]
     ],
 
     icon: [

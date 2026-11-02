@@ -17,7 +17,7 @@ $(function () {
         $(".log").html(config.log);
         $(".self-intro").html(config.welcome);
         $(".me").html(config.about);
-        $(".for-work").html(config.excpect_work);
+        $(".for-work").html(config.expected_work);
         $(".profile-page .page-header").css("background-image", "url(" + config.url[0] + ")");
         $(".myphoto").attr("src", config.url[1]);
         $(".portfolio-section").css({

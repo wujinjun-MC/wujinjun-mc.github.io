@@ -8,7 +8,7 @@ var config = {
     address: '<a href="https://wujinjun-mc.github.io/" target="_blank">wujinjun-mc.github.io</a>',
     qq: '<strong>(Removed sponsorship from upstream)</a>',
     log: "example_name",
-    excpect_work: "Backend / Infrastructure / Systems Engineering",
+    expected_work: "Backend / Infrastructure / Systems Engineering",
 
     motto: [
         "Build useful things, then explain them clearly.",

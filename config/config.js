@@ -79,5 +79,19 @@ var config = {
         "./images/avatar.jpg",
         "./images/work-bk.png",
         "./images/4.jpg"
-    ]
+    ],
+
+    /* Live status section. Set enabled:false to hide it (and the nav item). */
+    liveStatus: {
+        enabled: true,
+        endpoint: "./data/status.json",
+        batteryEndpoint: "./data/battery.json",
+        refreshSeconds: 300,
+        tickSeconds: 30,
+        staleAfterSeconds: 86400,
+        demoEndpoints: {
+            status: "./data/status.example.json",
+            battery: "./data/battery.example.json"
+        }
+    }
 }

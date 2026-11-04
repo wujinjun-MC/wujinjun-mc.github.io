@@ -27,6 +27,7 @@
     - [ ] UptimeKuma
     - [ ] Wechat Moment Scrrenshot Generator
 - [ ] Timeline (/dev/null , /dev/urandom)
+- [x] Live status section (phone battery / DeepSeek balance / Codex quota) — see [backend/status/README.md](backend/status/README.md)
 - [ ] AI
     - [ ] Chatbot integration
     - [ ] AGENTS.md

@@ -1,0 +1,73 @@
+name: Update phone battery
+
+# Triggered by the Android/Termux reporter with:
+#   POST /repos/{owner}/{repo}/actions/workflows/phone-battery.yml/dispatches
+#   { "ref": "master", "inputs": { "level": "87", "charging": "true", "ts": "1730000000" } }
+#
+# The fine-grained token used by the phone only needs "Actions: Read and write"
+# for this repository. No repository secret is required: the workflow commits
+# with the automatically provided GITHUB_TOKEN.
+
+on:
+  workflow_dispatch:
+    inputs:
+      level:
+        description: "Battery level 0-100"
+        required: true
+        type: string
+      charging:
+        description: "true when the phone is charging"
+        required: false
+        default: "false"
+        type: string
+      ts:
+        description: "Report time as unix seconds or ISO-8601 (optional)"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status-battery
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Write battery snapshot
+        env:
+          LEVEL: ${{ inputs.level }}
+          CHARGING: ${{ inputs.charging }}
+          TS: ${{ inputs.ts }}
+        run: node backend/status/write-battery.mjs
+
+      - name: Commit when changed
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- data/battery.json)" ]; then
+            echo "No battery change."
+            exit 0
+          fi
+          git config user.name "status-bot"
+          git config user.email "status-bot@users.noreply.github.com"
+          git add -- data/battery.json
+          git commit -m "chore(status): update phone battery"
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "Pushed battery snapshot."
+              exit 0
+            fi
+            echo "Push failed, retrying (${attempt}/3)."
+            sleep 5
+          done
+          echo "Failed to push the battery snapshot." >&2
+          exit 1

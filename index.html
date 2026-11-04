@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./images/avatar.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/personal-info-main.css">
+    <link rel="stylesheet" href="./CSS/live-status.css">
     <link rel="stylesheet" href="./CSS/personal-info-animate.css">
     <link rel="stylesheet" href="./CSS/animate.min.css">
     <link href="./CSS/aos.css" rel="stylesheet">
@@ -44,6 +45,7 @@
                     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#status">Status</a></li>
                             <li class="nav-item"><a class="nav-link" href="#skill">Skills</a></li>
                             <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
                             <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
@@ -156,6 +158,111 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="status-section" id="status" aria-labelledby="status-title">
+            <div class="container">
+                <h2 class="section-title" id="status-title">
+                    Live Status <span class="status-title-cn" lang="zh-CN">实时状态</span>
+                </h2>
+                <p class="status-subtitle" lang="zh-CN">手机电量、DeepSeek 余额与 Codex 额度 · 每 15 分钟采集，页面每 5 分钟刷新</p>
+                <div class="status-meta">
+                    <span class="status-connection" id="status-connection" data-state="loading" role="status" aria-live="polite">连接中…</span>
+                    <span class="status-last-sync" id="status-last-sync">上次同步：—</span>
+                    <button type="button" class="status-refresh" id="status-refresh" aria-label="重新获取实时状态">刷新</button>
+                    <span class="status-demo" id="status-demo" hidden>演示数据</span>
+                </div>
+
+                <div class="status-grid">
+                    <article class="status-card" id="status-card-battery" data-metric="battery" aria-labelledby="status-battery-label">
+                        <div class="status-card-head">
+                            <span class="status-icon status-icon-battery" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2.5" y="7" width="16" height="10" rx="2"></rect>
+                                    <path d="M21.5 10.5v3"></path>
+                                    <path d="m11 9-2 3.5h3L10.5 16"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="status-kicker">Battery</span>
+                                <h3 class="status-label" id="status-battery-label" lang="zh-CN">手机电量</h3>
+                            </div>
+                        </div>
+                        <p class="status-value"><span class="status-value-number" id="status-battery-value">—</span><span class="status-value-unit" id="status-battery-unit">%</span></p>
+                        <div class="status-meter" id="status-battery-meter" role="progressbar" aria-labelledby="status-battery-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <span class="status-meter-fill" id="status-battery-bar" data-tone="good"></span>
+                        </div>
+                        <p class="status-sub" id="status-battery-sub">等待手机上报</p>
+                        <p class="status-age" id="status-battery-age">—</p>
+                    </article>
+
+                    <article class="status-card" id="status-card-deepseek" data-metric="deepseek" aria-labelledby="status-deepseek-label">
+                        <div class="status-card-head">
+                            <span class="status-icon status-icon-deepseek" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <ellipse cx="12" cy="6" rx="7" ry="3"></ellipse>
+                                    <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path>
+                                    <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="status-kicker">DeepSeek</span>
+                                <h3 class="status-label" id="status-deepseek-label" lang="zh-CN">账户余额</h3>
+                            </div>
+                        </div>
+                        <p class="status-value"><span class="status-value-prefix" id="status-deepseek-prefix"></span><span class="status-value-number" id="status-deepseek-value">—</span><span class="status-value-unit" id="status-deepseek-unit"></span></p>
+                        <div class="status-flags" id="status-deepseek-flags"></div>
+                        <p class="status-sub" id="status-deepseek-sub">等待采集器</p>
+                        <p class="status-age" id="status-deepseek-age">—</p>
+                    </article>
+
+                    <article class="status-card" id="status-card-codex5" data-metric="codex5" aria-labelledby="status-codex5-label">
+                        <div class="status-card-head">
+                            <span class="status-icon status-icon-codex5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v5l3 2"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="status-kicker">Codex · 5h</span>
+                                <h3 class="status-label" id="status-codex5-label" lang="zh-CN">5 小时额度</h3>
+                            </div>
+                        </div>
+                        <p class="status-value"><span class="status-value-number" id="status-codex5-value">—</span><span class="status-value-unit" id="status-codex5-unit">%</span></p>
+                        <div class="status-meter" id="status-codex5-meter" role="progressbar" aria-labelledby="status-codex5-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <span class="status-meter-fill" id="status-codex5-bar" data-tone="good"></span>
+                        </div>
+                        <div class="status-flags" id="status-codex5-flags"></div>
+                        <p class="status-sub" id="status-codex5-sub">等待采集器</p>
+                        <p class="status-age" id="status-codex5-age">—</p>
+                    </article>
+
+                    <article class="status-card" id="status-card-codexw" data-metric="codexw" aria-labelledby="status-codexw-label">
+                        <div class="status-card-head">
+                            <span class="status-icon status-icon-codexw" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                    <path d="M8 3v4M16 3v4M3 11h18"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="status-kicker">Codex · Weekly</span>
+                                <h3 class="status-label" id="status-codexw-label" lang="zh-CN">本周额度</h3>
+                            </div>
+                        </div>
+                        <p class="status-value"><span class="status-value-number" id="status-codexw-value">—</span><span class="status-value-unit" id="status-codexw-unit">%</span></p>
+                        <div class="status-meter" id="status-codexw-meter" role="progressbar" aria-labelledby="status-codexw-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <span class="status-meter-fill" id="status-codexw-bar" data-tone="good"></span>
+                        </div>
+                        <div class="status-flags" id="status-codexw-flags"></div>
+                        <p class="status-sub" id="status-codexw-sub">等待采集器</p>
+                        <p class="status-age" id="status-codexw-age">—</p>
+                    </article>
+                </div>
+
+                <p class="status-note" lang="zh-CN">数据由本机定时采集；卡片时间为数值最后变化的时间。仅展示汇总值，不包含任何密钥或账号凭据。</p>
             </div>
         </section>
 
@@ -337,6 +444,7 @@
 <script src="./JS/app.js"></script>
 <script src="./JS/aos.js"></script>
 <script src="./JS/personal-info-main.js"></script>
+<script src="./JS/live-status.js"></script>
 <script>
     AOS.init();
 </script>

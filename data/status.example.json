@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-04T08:30:00.000Z",
+  "deepseek": {
+    "ok": true,
+    "currency": "CNY",
+    "total": 42.5,
+    "granted": 5,
+    "toppedUp": 37.5,
+    "available": true,
+    "updatedAt": "2026-11-04T08:30:00.000Z"
+  },
+  "codex": {
+    "ok": true,
+    "planType": "plus",
+    "primary": {
+      "usedPercent": 36,
+      "remainingPercent": 64,
+      "windowSeconds": 18000,
+      "resetAt": "2026-11-04T10:45:00.000Z"
+    },
+    "secondary": {
+      "usedPercent": 58,
+      "remainingPercent": 42,
+      "windowSeconds": 604800,
+      "resetAt": "2026-11-07T08:00:00.000Z"
+    },
+    "limitReached": false,
+    "updatedAt": "2026-11-04T08:30:00.000Z"
+  }
+}

@@ -1,0 +1,7 @@
+# Local credentials and logs for the live-status collector.
+backend/status/.env
+backend/status/android/live-status.env
+backend/status/.collect.log
+
+# Temporary files written by the atomic JSON helper.
+*.tmp

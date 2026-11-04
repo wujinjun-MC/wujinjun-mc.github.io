@@ -5,7 +5,7 @@
 - This repository is the owner's personal résumé / portfolio site, intended for `https://wujinjun-mc.github.io/`.
 - Git remote: `https://github.com/wujinjun-MC/wujinjun-mc.github.io`.
 - The site is adapted from `happysnaker/Resume`. Preserve applicable attribution, `LICENSE`, and `THIRD_PARTY_NOTICES.md`.
-- It is a static site: HTML, CSS, JavaScript, and bundled frontend libraries. There is no package manifest, build step, automated test suite, or deployment workflow checked in. GitHub Pages settings are outside this repository and have not been verified.
+- It is a static site: HTML, CSS, JavaScript, and bundled frontend libraries. The résumé itself has no package manifest or build step; `backend/status/` is a small dependency-free Node helper, and `.github/workflows/phone-battery.yml` is the only workflow. GitHub Pages settings are outside this repository and have not been verified.
 - `README.md` records plans for résumé, blog, and CSI205 use. Treat unchecked goals as plans, not implemented features.
 
 ## File map
@@ -17,7 +17,11 @@
 - `JS/app.js`: particles.js setup. AOS and other bundled libraries provide additional animations.
 - `images/` and `svg/`: local image and social-icon assets.
 - `.github/SUPPORT.md` and `.github/ISSUE_TEMPLATE/config.yml`: inherited upstream support and issue-routing material; these do not establish the owner's services or payment details.
-- `backend/src/personal_status_updater`: Personal status updater (TODO). Support: Deepseek account balance, Codex 5-hour/weekly remaining quota, and mobile phone battery.
+- `JS/live-status.js` and `CSS/live-status.css`: live status cards (battery, DeepSeek balance, Codex 5h/weekly remaining quota). The script reads `data/status.json` and `data/battery.json` from the same origin; `?demo=1` loads `data/*.example.json` instead. It must never log or render credentials, and it inserts data with `textContent`, not `innerHTML`.
+- `config/config.js` includes a `liveStatus` block (endpoints, refresh interval, demo fixtures, `enabled`). Removing a `status-card` from `index.html` is safe; the renderer skips missing cards.
+- `data/`: `status.json` and `battery.json` are generated public snapshots; `*.example.json` are demo/test fixtures. Do not commit real credentials or fake values under the real file names.
+- `backend/status/`: dependency-free Node collector (`collect.mjs`, `write-battery.mjs`, `lib/`, `test/`), PowerShell wrapper for Windows Task Scheduler, and the Android/Termux battery reporter. It reads DeepSeek's balance API and the local Codex `auth.json`; tokens are never written to the repository or logs. See `backend/status/README.md`.
+- `.github/workflows/phone-battery.yml`: `workflow_dispatch`-only workflow that writes `data/battery.json` and commits it with the built-in `GITHUB_TOKEN`. The phone's fine-grained PAT only needs `Actions: Read and write`.
 
 ## Editing conventions
 
@@ -60,8 +64,10 @@ These observations describe the checked-in content, not verified facts about the
 
 ## Local preview and validation
 
-- Serve the repository root with `python3 -m http.server 8000`, then open `http://localhost:8000/`. Stop the server when finished.
-- There are no dependency-install or build commands to run. For JavaScript edits, use available syntax checks such as `node --check config/config.js`, `node --check JS/personal-info-main.js`, and `node --check JS/app.js` for the files touched.
+- Serve the repository root with `python3 -m http.server 8000`, then open `http://localhost:8000/`. Use `?demo=1` for the live-status UI with example fixtures. Stop the server when finished.
+- There are no dependency-install or build commands to run. For JavaScript edits, use available syntax checks such as `node --check config/config.js`, `node --check JS/personal-info-main.js`, `node --check JS/live-status.js`, and `node --check JS/app.js` for the files touched. Run `node --check` over every `.mjs` under `backend/status/`.
+- Run the collector tests with `node --test backend/status/test`. If the sandbox blocks child processes (spawn EPERM), use `node --test --experimental-test-isolation=none backend/status/test/*.test.mjs` or run each test file directly.
+- Check that `backend/status/.env`, `backend/status/android/live-status.env`, and `backend/status/.collect.log` are ignored (`git check-ignore`); never commit tokens, `auth.json`, or PATs. Review the `data/*.json` diff for accidental secrets or placeholder-as-real values.
 - For page/content changes, preview desktop and mobile widths. Check the navbar, section anchors, profile rendering, images, project cards, timeline, animations, and contact behavior as relevant. Check the console and network panel for script errors and missing local assets.
 - Review placeholder occurrences with `rg -n 'Example|example_name|example\.com|example@example\.com' index.html config/config.js`; assess matches in context rather than replacing them indiscriminately.
 - Run `git diff --check` and review the final diff. Documentation-only edits do not require UI tests.

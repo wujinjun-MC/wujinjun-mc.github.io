@@ -17,6 +17,7 @@
 - `JS/app.js`: particles.js setup. AOS and other bundled libraries provide additional animations.
 - `images/` and `svg/`: local image and social-icon assets.
 - `.github/SUPPORT.md` and `.github/ISSUE_TEMPLATE/config.yml`: inherited upstream support and issue-routing material; these do not establish the owner's services or payment details.
+- `backend/src/personal_status_updater`: Personal status updater (TODO). Support: Deepseek account balance, Codex 5-hour/weekly remaining quota, and mobile phone battery.
 
 ## Editing conventions
 

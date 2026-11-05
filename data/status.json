@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T13:10:30.333Z",
+  "generatedAt": "2026-11-05T16:10:31.225Z",
   "deepseek": {
     "currency": "CNY",
-    "total": 21.94,
-    "granted": 1.94,
+    "total": 20,
+    "granted": 0,
     "toppedUp": 20,
     "available": true,
     "ok": true,
-    "updatedAt": "2026-11-05T13:10:30.333Z"
+    "updatedAt": "2026-11-05T16:10:31.225Z"
   },
   "codex": {
     "ok": false,

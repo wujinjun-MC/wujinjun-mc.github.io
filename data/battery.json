@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "level": 90,
+  "level": 86,
   "charging": false,
-  "updatedAt": "2026-11-22T15:30:01.000Z",
-  "reportedAt": "2026-11-22T15:30:01.000Z",
+  "updatedAt": "2026-11-22T16:15:00.000Z",
+  "reportedAt": "2026-11-22T16:15:00.000Z",
   "source": "android"
 }
